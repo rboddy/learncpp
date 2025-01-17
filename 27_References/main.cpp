@@ -17,5 +17,15 @@ int main() {
 
   // All references must be initialized, and they cannot be reseated (moved to
   // another object) once initialized. They also follow the same scoping rules
-  // as variables
+  // as variables. We can also create an lvalue reference to const using the
+  // const keyword:
+
+  const int y = 7;
+  const int &constRef = y;
+
+  // Even better yet, we can create a constant reference to a non-constant
+  // variable:
+
+  int z = 10;
+  const int &constZRef = z;
 }
