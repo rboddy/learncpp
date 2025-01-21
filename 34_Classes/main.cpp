@@ -2,6 +2,8 @@
 // class sections, though some may be broken out into other directories
 #include <iostream>
 
+#include "game.h"
+
 class Employee {
  public:
   int m_id{};
@@ -78,4 +80,12 @@ int main() {
   // We can't implement classes as aggregators due to private members. However,
   // we can use constructors
   Foo foo{6, 7};  // is NOT an aggregate. This calls foos constructor
+
+  // Because classes become unruly, it's common to define them in header files,
+  // as shown here:
+
+  std::string title = "The Best Game Ever";
+
+  Game game{14.99, 'M', title};
+  game.print();
 }
